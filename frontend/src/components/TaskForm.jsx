@@ -1,42 +1,44 @@
-import { useState } from "react";
+import React, { useState } from 'react';
+import taskService from '../services/taskService';
 
-export default function TaskForm({ onAdd }) {
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
+function TaskForm({ onTaskCreated }) {
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        console.log("Botão clicado", { title, description }); // <- log para testar
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!title) {
+      alert('O título da tarefa é obrigatório.');
+      return;
+    }
+    try {
+      const response = await taskService.createTask({ title, description });
+      onTaskCreated(response.data); // Passa a nova tarefa para o componente pai
+      setTitle('');
+      setDescription('');
+    } catch (error) {
+      console.error('Erro ao criar tarefa:', error);
+      alert('Não foi possível criar a tarefa.');
+    }
+  };
 
-    const response = await fetch("http://localhost:5000/tasks/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title, description })
-    });
-
-    const data = await response.json();
-    console.log("Resposta do backend:", data); // <- log para testar
-    onAdd(data);
-    setTitle("");
-    setDescription("");
-};
-
-
-    return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                placeholder="Título"
-                value={title}
-                onChange={e => setTitle(e.target.value)}
-            />
-            <input
-                type="text"
-                placeholder="Descrição"
-                value={description}
-                onChange={e => setDescription(e.target.value)}
-            />
-            <button type="submit">Adicionar Tarefa</button>
-        </form>
-    )
+  return (
+    <form onSubmit={handleSubmit} className="task-form">
+      <h3>Nova Tarefa</h3>
+      <input
+        type="text"
+        placeholder="Título da Tarefa"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
+      <textarea
+        placeholder="Descrição (opcional)"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      ></textarea>
+      <button type="submit">Adicionar Tarefa</button>
+    </form>
+  );
 }
+
+export default TaskForm;
