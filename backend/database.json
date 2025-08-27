@@ -1,0 +1,20 @@
+{
+    "tasks": [
+        {
+            "id": "6d367fc6-7580-4826-ad08-d6223c47e97e",
+            "title": "Estudar Flask",
+            "description": "Ler documenta\u00e7\u00e3o oficial do Flask",
+            "status": "conclu\u00edda",
+            "created_at": "2025-08-25T10:47:07.603185",
+            "updated_at": "2025-08-25T10:55:00.669830"
+        },
+        {
+            "id": "1ecf1334-9747-407e-a558-978dedd7c707",
+            "title": "Comer ma\u00e7\u00e3",
+            "description": "at\u00e9 hoje a tarde",
+            "status": "pendente",
+            "created_at": "2025-08-25T12:17:41.444602",
+            "updated_at": null
+        }
+    ]
+}

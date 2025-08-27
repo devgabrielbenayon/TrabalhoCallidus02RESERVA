@@ -1,0 +1,15 @@
+{
+    "tasks": [
+        {
+            "id": "d7ae67b7-c4c4-40b7-bd77-bfb3d4bbed68",
+            "title": "Minha Primeira Tarefa",
+            "user_id": "5f708baa-7bce-4f18-b7fa-101ddc26efa3",
+            "description": "Descri\u00e7\u00e3o da tarefa.",
+            "status": "pendente",
+            "created_at": "2025-08-26T22:18:55.240480",
+            "updated_at": null,
+            "due_date": null,
+            "priority": "media"
+        }
+    ]
+}

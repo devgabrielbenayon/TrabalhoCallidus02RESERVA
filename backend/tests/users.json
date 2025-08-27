@@ -1,0 +1,14 @@
+[
+    {
+        "id": "99c09f42-f9ee-42e2-a4f9-397a38b45c50",
+        "username": "Batman",
+        "password_hash": "scrypt:32768:8:1$q73Uf6gHeHkzBpHP$bb27e9a4cd91de6cef4d42cefa8a4361526f485fcc847fa6a4b597789a0eb48b53dd55f1207c75956058a2214baffd89f1689bf1a3edc5dc30f64a2fd54eaa41",
+        "created_at": null
+    },
+    {
+        "id": "684d712c-1a4e-46b2-9c14-b9da39674ce3",
+        "username": "Gandalf",
+        "password_hash": "scrypt:32768:8:1$2PLFr1gTNQlsiFKs$54d3f344b9f12f34c5c796651090830dc5cf8a27df6ea96bac4b9fc3bf93487478c0dbcb8af73b6fcbed0385aeebed5a7a0627644a5b7652cb0b54906d3700c4",
+        "created_at": "2025-08-25T11:08:08.208970"
+    }
+]
