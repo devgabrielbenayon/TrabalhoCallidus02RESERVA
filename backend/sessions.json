@@ -1,1 +1,10 @@
-[]
+[
+    {
+        "id": "ce72d5c7-9299-4985-a0a5-8799ce1ce188",
+        "user_id": "bc81fe02-5dec-4dcd-937d-8fd059a9c7a4",
+        "task_id": "f5c3da4e-9372-456f-a2ce-af39f0544794",
+        "start_time": "2025-08-27T16:10:32.591969",
+        "end_time": "2025-08-27T16:10:54.333470",
+        "duration_minutes": 0.36
+    }
+]
