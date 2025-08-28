@@ -16,5 +16,11 @@
         "username": "testuser",
         "password_hash": "scrypt:32768:8:1$7drXL4MD608Zhwz9$6a00e40f52461539b14094d8e7476a83da03fe76d4832c94a11e7b06575df6ed51f06ab0b4ad86146729f1526e0b5b046fc449dffbf4d73cb6caf591468b59d1",
         "created_at": "2025-08-26T22:10:11.607627"
+    },
+    {
+        "id": "5dacdb7f-96ec-486f-b1e3-74f8b53d9e26",
+        "username": "User151",
+        "password_hash": "scrypt:32768:8:1$wUHce4iU0cuisyv1$bfa6f2fad51e96a76eb1c3dac166425c02d303731e93488f3fcefcee90c69940eeb6c3c19a131c9a99d06839631eb740716533ee76e4af22c87d3ea404fcc372",
+        "created_at": "2025-08-28T08:18:35.397808"
     }
 ]

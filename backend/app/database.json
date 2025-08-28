@@ -10,6 +10,28 @@
             "updated_at": null,
             "due_date": null,
             "priority": "media"
+        },
+        {
+            "id": "9750ae5a-bbc2-4ee3-a836-ba4e8f49b4c3",
+            "title": "Estudar Java",
+            "user_id": "5dacdb7f-96ec-486f-b1e3-74f8b53d9e26",
+            "description": "- Orientea\u00e7\u00e3o a objetos, relacionamentos, interface e tratamento de excess\u00e3o.",
+            "status": "concluida",
+            "created_at": "2025-08-28T08:19:53.406308",
+            "updated_at": "2025-08-28T08:45:59.383552",
+            "due_date": null,
+            "priority": "media"
+        },
+        {
+            "id": "6bfac10d-b264-446e-b93a-570c7751bab6",
+            "title": "Estudar FTC",
+            "user_id": "5dacdb7f-96ec-486f-b1e3-74f8b53d9e26",
+            "description": "- AFD, AFND e Gram\u00e1ticas sens\u00edveis ao contexto.",
+            "status": "pendente",
+            "created_at": "2025-08-28T08:39:13.813736",
+            "updated_at": null,
+            "due_date": null,
+            "priority": "media"
         }
     ]
 }

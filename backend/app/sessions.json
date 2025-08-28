@@ -6,5 +6,13 @@
         "start_time": "2025-08-26T23:07:28.047018",
         "end_time": "2025-08-26T23:08:57.866694",
         "duration_minutes": 1.5
+    },
+    {
+        "id": "e01eed01-c477-481a-90f5-17f7d4a000cc",
+        "user_id": "5dacdb7f-96ec-486f-b1e3-74f8b53d9e26",
+        "task_id": "9750ae5a-bbc2-4ee3-a836-ba4e8f49b4c3",
+        "start_time": "2025-08-28T08:19:59.925860",
+        "end_time": "2025-08-28T08:20:03.073235",
+        "duration_minutes": 0.05
     }
 ]
