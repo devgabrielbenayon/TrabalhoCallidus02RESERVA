@@ -5,6 +5,7 @@ import Login from "./components/Login"
 import Register from "./components/Register"
 import TaskList from "./components/TaskList"
 import Dashboard from "./components/Dashboard"
+import Profile from "./components/Profile"
 import authService from "./services/authService"
 import taskService from "./services/taskService"
 import "./App.css"
@@ -15,7 +16,7 @@ function App() {
   const [tasks, setTasks] = useState([])
   const [focusedTask, setFocusedTask] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [currentView, setCurrentView] = useState("dashboard") // Added view state for navigation
+  const [currentView, setCurrentView] = useState("dashboard") // dashboard, tasks, profile
 
   useEffect(() => {
     const fetchTasks = async () => {
@@ -26,6 +27,7 @@ function App() {
         } catch (error) {
           console.error("Erro ao buscar tarefas:", error)
           if (error.response && error.response.status === 401) {
+            console.log("[v0] Token inválido, fazendo logout")
             handleLogout()
           }
         } finally {
@@ -55,10 +57,12 @@ function App() {
   }
 
   const handleLogout = () => {
+    console.log("[v0] Fazendo logout")
     authService.logout()
     setIsAuthenticated(false)
     setTasks([])
     setFocusedTask(null)
+    setCurrentView("dashboard")
   }
 
   const handleTaskCreated = (newTask) => {
@@ -90,7 +94,7 @@ function App() {
           {isAuthenticated && (
             <>
               <button className="settings-btn">⚙️</button>
-              <button onClick={handleLogout} className="profile-btn">
+              <button onClick={() => setCurrentView("profile")} className="profile-btn">
                 👤
               </button>
             </>
@@ -138,6 +142,12 @@ function App() {
               >
                 Tarefas
               </button>
+              <button
+                className={currentView === "profile" ? "tab active" : "tab"}
+                onClick={() => setCurrentView("profile")}
+              >
+                Perfil
+              </button>
             </div>
 
             {currentView === "dashboard" ? (
@@ -148,7 +158,7 @@ function App() {
                 onTaskCreated={handleTaskCreated}
                 onTaskUpdated={handleTaskUpdated}
               />
-            ) : (
+            ) : currentView === "tasks" ? (
               <TaskList
                 tasks={tasks}
                 setTasks={setTasks}
@@ -156,6 +166,8 @@ function App() {
                 onTaskCreated={handleTaskCreated}
                 onTaskUpdated={handleTaskUpdated}
               />
+            ) : (
+              <Profile onBack={() => setCurrentView("dashboard")} tasks={tasks} />
             )}
           </>
         )}
